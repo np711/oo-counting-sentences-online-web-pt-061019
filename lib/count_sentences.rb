@@ -3,7 +3,8 @@ require 'pry'
 class String
 
   def sentence? do
-    it "returns true if the string that you are calling this methid on ends in "
+    it "returns true if the string that you are calling this methid on ends in a perid." do 
+      expect("Hi, my name is Sphie.".sentence?). to eq(true)
     self.end_with?(".") ? true : false
     
   end
