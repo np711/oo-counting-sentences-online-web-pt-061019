@@ -2,31 +2,29 @@ require 'pry'
 
 class String
 
-  def sentence? do
-    it "returns true if the string that you are calling this methid on ends in a perid." do 
-      expect("Hi, my name is Sphie.".sentence?). to eq(true)
-    self.end_with?(".") ? true : false
+  def sentence?
+    self.end_with?(".")  
     
   end
 
 
   def question?
-    self.end_with?("?") ? true : false 
+    self.end_with?("?") 
   
 
   end
 
   def exclamation?
-    self.end_with?("!") ? true : false
+    self.end_with?("!")
 
   end
 
   def count_sentences
-    sentence_array = self.split(/[.?!]/)
-    sentence_array.delete_if{|sentence| sentence.empty?}
-    sentence_array.length 
+    self.split(/[.!?]/).reject {|x| x.empty?}.size 
+  end 
+  def count_sentences_words
+    self.split(/[.!?]/).map{|x| !(x.match(/\w+/).nil?}.reject{|x| x == false}.size
   end 
 end 
 
-  end
-end
+"Well, I don't know, is this a sentence?? ??? What about this?" .count_sentences_words
