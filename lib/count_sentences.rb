@@ -2,7 +2,8 @@ require 'pry'
 
 class String
 
-  def sentence?
+  def sentence? do
+    it "returns true if the string that you are calling this methid on "
     self.end_with?(".") ? true : false
     
   end
